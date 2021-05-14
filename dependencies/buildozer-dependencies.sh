@@ -3,8 +3,8 @@
 # Install Python pip
 if [ -e /usr/bin/apt ]; then
 	sudo apt install -y curl
-    sudo apt install -y python3
-    sudo apt install -y python3-pip
+	sudo apt install -y python3
+	sudo apt install -y python3-pip
 	sudo apt install -y python3-distutils
 #	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 #	sudo python3 get-pip.py
@@ -64,7 +64,7 @@ if [ -e /usr/bin/apt ]; then
     	libssl-dev \
     	autoconf \
     	autotools-dev \
-    	llb \
+	llb \
     	cmake
 fi
 if [ -e /usr/bin/pacmann ]; then
