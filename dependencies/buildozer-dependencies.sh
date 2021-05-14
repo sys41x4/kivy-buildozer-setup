@@ -2,14 +2,16 @@
 
 # Install Python pip
 if [ -e /usr/bin/apt ]; then
-	sudo apt-get install -y curl
-	sudo apt-get install -y python3-distutils
-	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-	sudo python3 get-pip.py
+	sudo apt install -y curl
+    sudo apt install -y python3
+    sudo apt install -y python3-pip
+	sudo apt install -y python3-distutils
+#	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+#	sudo python3 get-pip.py
 
 	# Dependencies with SDL2
 	# Install necessary system packages
-	sudo apt-get install -y \
+	sudo apt install -y \
     	python-pip \
     	build-essential \
     	git \
@@ -53,7 +55,7 @@ if [ -e /usr/bin/apt ]; then
     	libidn11:i386 \
     	python2.7 \
     	python2.7-dev \
-    	openjdk-8-jdk \
+    	default-jdk \
     	unzip \
     	zlib1g-dev \
     	zlib1g:i386 \
@@ -62,6 +64,7 @@ if [ -e /usr/bin/apt ]; then
     	libssl-dev \
     	autoconf \
     	autotools-dev \
+    	llb \
     	cmake
 fi
 if [ -e /usr/bin/pacmann ]; then
