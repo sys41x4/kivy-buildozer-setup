@@ -73,7 +73,7 @@ buildozer_dependencies(){
 
 setup_android_env(){
 
-	mkdir /tmp/kivy-test-hello-world-script && cd /tmp/kivy-test-hello-world-script && wget https://github.com/sys41x4/kivy-buildozer-setup/blob/main/kivy-test-hello-world-script/main.py
+	mkdir /tmp/kivy-test-hello-world-script && cd /tmp/kivy-test-hello-world-script && wget https://raw.githubusercontent.com/sys41x4/kivy-buildozer-setup/main/kivy-test-hello-world-script/main.py
 	buildozer init
 	buildozer android debug deploy
 	cd ../ && rm -rf ./kivy-test-hello-world-script && cd ~/
