@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo "Checking For required dependencies"
-req_dependencies
-clear
+current_dir = $PWD
 
 req_dependencies(){
 
@@ -76,7 +74,7 @@ setup_android_env(){
 	mkdir /tmp/kivy-test-hello-world-script && cd /tmp/kivy-test-hello-world-script && wget https://raw.githubusercontent.com/sys41x4/kivy-buildozer-setup/main/kivy-test-hello-world-script/main.py
 	buildozer init
 	buildozer android debug deploy
-	cd ../ && rm -rf ./kivy-test-hello-world-script && cd ~/
+	cd ../ && rm -rf ./kivy-test-hello-world-script && cd $current_dir
 	
 	echo -e "\n\nAndroid Debuging Environment for buildozer has been successfully installed"
 }
@@ -93,12 +91,17 @@ additional_support_env(){
 		
 	echo "\n\nYou System is updated, and all development dependencies are installed"
 }
+
 exit_prog(){
 
 	echo -e "\n\nThankyou For Using\n \
 Do support Me if you want to at : https://sys41x4.github.io/support/sys41x4"
 	exit
 }
+
+echo "Checking For required dependencies"
+req_dependencies
+clear
 
 while :
 do
