@@ -4,57 +4,6 @@ echo "Checking For required dependencies"
 req_dependencies
 clear
 
-while :
-do
-echo "Script by Arijit-Bhowmick aka sys41x4\n \
-twitter : @sys41x4 \
-github : @sys41x4 \
-instagram : @sys41x4 \
-
-Repository : https://github.com/sys41x4/kivy-buildozer-setup \
-Documentation : https://sys41x4.github.io/kivy-buildozer-setup \
-
-Please Select Anyone option to continue :\n \
-[1] Install Kivy \
-[2] Install buildozer & Setup buildozer dependencies \
-[3] Install buildozer, Buildozer dependencies & setup Android debugging environment \
-[4] Update system and Automatically install the required support environment for development of Kivy Programs \
-[5] Exit"
-
-read user_decision
-
-if [[$user_decision == 1]]
-then
-	kivy_install
-	exit_prog
-	
-elif [[$user_decision == 2]]
-then
-	buildozer_setup
-	buildozer_dependencies
-	exit_prog
-	
-elif [[$user_decision == 3]]
-then
-	buildozer_setup
-	buildozer_dependencies
-	setup_android_env
-	exit_prog
-	
-elif [[$user_decision == 4]]
-then
-	buildozer_setup
-	buildozer_dependencies
-	setup_android_env
-	additional_support_env
-	exit_prog
-	
-elif [[$user_decision == 5]]
-then
-	exit_prog
-fi
-done
-
 req_dependencies(){
 
 	sudo apt install -y \
@@ -68,12 +17,12 @@ req_dependencies(){
 
 kivy_install(){
 	sudo pip3 install kivy
-	echo "\n\nKivy is successfully installed"
+	echo -e "\n\nKivy is successfully installed"
 }
 
 buildozer_setup(){
 	sudo pip3 install buildozer cython
-	echo "\n\nBuildozer is successfully installed"
+	echo -e "\n\nBuildozer is successfully installed"
 }
 
 buildozer_dependencies(){
@@ -119,7 +68,7 @@ buildozer_dependencies(){
 	bzip2 \
 	unzip
 	
-	echo "\n\nBuildozer Dependencies are successfully installed"
+	echo -e "\n\nBuildozer Dependencies are successfully installed"
 }
 
 setup_android_env(){
@@ -127,9 +76,9 @@ setup_android_env(){
 	mkdir /tmp/kivy-test-hello-world-script && cd /tmp/kivy-test-hello-world-script && wget https://github.com/sys41x4/kivy-buildozer-setup/blob/main/kivy-test-hello-world-script/main.py
 	buildozer init
 	buildozer android debug deploy
-	cd ../ && rm -rf ./kivy-test-hello-world-script
+	cd ../ && rm -rf ./kivy-test-hello-world-script && cd ~/
 	
-	echo "\n\nAndroid Debuging Environment for buildozer has been successfully installed"
+	echo -e "\n\nAndroid Debuging Environment for buildozer has been successfully installed"
 }
 
 additional_support_env(){
@@ -146,7 +95,65 @@ additional_support_env(){
 }
 exit_prog(){
 
-	echo "\n\nThankyou For Using\n \
-	Do support Me if you want to at : https://sys41x4.github.io/support/sys41x4"
+	echo -e "\n\nThankyou For Using\n \
+Do support Me if you want to at : https://sys41x4.github.io/support/sys41x4"
 	exit
 }
+
+while :
+do
+echo -e -n "Script by Arijit-Bhowmick aka sys41x4\n \
+twitter : @sys41x4\n \
+github : @sys41x4\n \
+instagram : @sys41x4\n\n \
+
+Repository : https://github.com/sys41x4/kivy-buildozer-setup\n \
+Documentation : https://sys41x4.github.io/kivy-buildozer-setup\n\n \
+
+Please Select Anyone option to continue :\n \
+[1] Install Kivy\n \
+[2] Install buildozer & Setup buildozer dependencies\n \
+[3] Install buildozer, Buildozer dependencies & setup Android debugging environment\n \
+[4] Update system and Automatically install the required support\n \
+[5] Exit\n\n \
+
+>> "
+read user_decision
+
+if [[ $user_decision -eq 1 ]]
+then
+	kivy_install
+	exit_prog
+	
+elif [[ $user_decision -eq 2 ]]
+then
+	buildozer_setup
+	buildozer_dependencies
+	exit_prog
+	
+elif [[ $user_decision -eq 3 ]]
+then
+	buildozer_setup
+	buildozer_dependencies
+	setup_android_env
+	exit_prog
+	
+elif [[ $user_decision -eq 4 ]]
+then
+	buildozer_setup
+	buildozer_dependencies
+	setup_android_env
+	additional_support_env
+	exit_prog
+	
+elif [[ $user_decision -eq 5 ]]
+then
+	exit_prog
+else
+
+clear
+echo -e "You have entered an incorrect option\n \
+Please Try Again\n"
+
+fi
+done
