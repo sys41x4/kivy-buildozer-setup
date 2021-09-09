@@ -14,7 +14,7 @@ Then Run the script as -
 
 # Documentation
 
-Documentation : <a href='https://sys41x4.github.io/kivy-buildozer-setup'>View Documentation about how to use this script</a>
+Documentation : <a href='https://sys41x4.github.io/github/documentation/kivy-buildozer-setup.html'>View Documentation about how to use this script</a>
 
 # Tested on :
 
